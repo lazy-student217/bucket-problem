@@ -2,8 +2,7 @@ This project consists of a python file: `bucket_problem.py`. This python script 
 
 ## Bucket problem
 
-Bucket problem is a class of problems like this: If I have a 3L bucket and a 5L bucket, assuming I have infinite amount of water, how can I get a bucket with 4L of water? This project explores the state changes of buckets using basic graph thoery and related algothirm. 
-
+Bucket problem is a class of problems like this: If I have a 3L bucket and a 5L bucket, assuming I have infinite amount of water, how can I get a bucket with 4L of water? This project explores the state changes of buckets using basic graph thoery and related algorithm. 
 
 ## Usage
 
