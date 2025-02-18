@@ -3,6 +3,7 @@ from copy import copy
 from functools import reduce
 from operator import mul
 
+
 def bucket_bfs(
     buckets: list[int], initial_state: list[int] | None = None
 ) -> list[list[list[int]]]:
@@ -52,10 +53,11 @@ def bucket_bfs(
         result.append(level)
     return result
 
+
 def get_input() -> tuple[list[int], list[int] | None]:
     while True:
         buckets_capacity = input("Buckets capacity: ").strip()
-        try: 
+        try:
             buckets = list(map(lambda s: int(s.strip()), buckets_capacity.split("|")))
             break
         except ValueError:
@@ -64,15 +66,18 @@ def get_input() -> tuple[list[int], list[int] | None]:
         initial_state_str = input("Initial state: ").strip()
         if initial_state_str == "":
             initial_state = None
-            break  
+            break
         else:
-            try: 
-                initial_state = list(map(lambda s: int(s.strip()), initial_state_str.split("|")))
+            try:
+                initial_state = list(
+                    map(lambda s: int(s.strip()), initial_state_str.split("|"))
+                )
                 break
             except ValueError:
                 print("Failed to parse... Please type again")
 
     return buckets, initial_state
+
 
 def main() -> None:
     buckets, initial_state = get_input()
@@ -86,10 +91,10 @@ def main() -> None:
     print("-----")
     # Data
     state_count = sum(len(level) for level in result)
-    ideal_state = reduce(mul, map(lambda x: x+1, buckets), 1)
+    ideal_state = reduce(mul, map(lambda x: x + 1, buckets), 1)
     cover_rate = state_count / ideal_state * 100
     print(
-        f"STATE COUNT: {state_count}\nIDEAL STATE COUNT: {ideal_state}\nCOVER RATE: {round(cover_rate,1)}%"
+        f"STATE COUNT: {state_count}\nIDEAL STATE COUNT: {ideal_state}\nCOVER RATE: {round(cover_rate, 1)}%"
     )
 
 
